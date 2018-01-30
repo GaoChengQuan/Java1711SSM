@@ -32,22 +32,21 @@
 	<!-- 配置SqlSessionFactory 单独的MyBaits需要自己去new这个SqlSessionFactory，
 	现在和Spring结合后交给Spring容器帮我们创建好，默认bean的单例的。
 	-->
-	<bean id="sqlSessionFactory" class="com.mybatis.spring.SqlSessionFactoryBean">
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<!-- 加载MyBatis核心配置文件 -->
-		<property name="configLoacation" value="classpath:mybatis.xml"/>
+		<property name="configLocation" value="classpath:mybatis.xml"/>
 		<!-- 配置数据源 -->
-		<property name="dataSource" value="dataSource"/>
+		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
 	<!-- 配置Mapper扫描 -->
 	<!-- MapperScannerConfigurer:mapper扫描器，将包下面的mapper接口
-		自动创建代理对象，自动创建到Spring容器中， bean、
+		自动创建代理对象，自动创建到Spring容器中， bean
 		的id就是mapper的类名(首字母小写)-->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 配置Mapper扫描包 -->
 		<property name="basePackage" value="com.situ.ssm.dao"/>
 	</bean>
-	
 	
 	<!-- ****************************************** -->
 	<!-- 事物相关 -->
@@ -55,7 +54,7 @@
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<!-- 数据源, 事物的操作是和数据库相关的，因为中间出现异常，
 		 需要数据库回滚数据。-->
-		<property name="dataSource" value="dataSource"/>
+		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!-- 通知 -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
