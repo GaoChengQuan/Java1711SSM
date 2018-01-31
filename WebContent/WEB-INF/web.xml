@@ -52,6 +52,11 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
-		<url-pattern>*.action</url-pattern>
+		<!--  第一种：*.action,拦截以action结尾，交给DispatcherServlet进行解析
+			  第二种：/,所有的访问地址都由DispatcherServlet进行解析，对于静态资源文件
+			         不让DispatcherServlet进行解析。
+			     使用这种方式就可以实现RESTful风格的uri
+		 -->
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 </web-app>

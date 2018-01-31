@@ -19,4 +19,14 @@ public class StudentServiceImpl implements IStudentService{
 		return studentDao.findAll();
 	}
 
+	@Override
+	public Student findById(Integer id) {
+		return studentDao.findById(id);
+	}
+
+	@Override
+	public void deleteById(Integer id) {
+		studentDao.deleteById(id);
+	}
+
 }

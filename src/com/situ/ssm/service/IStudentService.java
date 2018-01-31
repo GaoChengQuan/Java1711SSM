@@ -8,4 +8,8 @@ public interface IStudentService {
 
 	List<Student> findAll();
 
+	Student findById(Integer id);
+
+	void deleteById(Integer id);
+
 }

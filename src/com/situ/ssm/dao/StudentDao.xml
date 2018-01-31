@@ -4,7 +4,37 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.situ.ssm.dao.StudentDao">
-	<select id="findAll" resultType="Student">
-		select id,name,age,gender,address from student
+	<select id="findAll" parameterType="string" resultType="Student">
+		select id,name,age,gender,address 
+		from student
+	</select>
+	
+	<select id="findById" parameterType="int" resultType="Student">
+		select id,name,age,gender,address 
+		from student 
+		where id=#{id}
+	</select>
+	
+	<delete id="deleteById" parameterType="int">
+		delete from student
+		where id=#{id}
+	</delete>
+	
+	<select id="findByName" resultType="Student">
+		select id,name,age,gender,address 
+		from ${tableName}
+		where name like "%"#{name}"%"
+	</select>
+	
+	<select id="findByName1" resultType="Student">
+		select id,name,age,gender,address 
+		from ${tableName}
+		where name like concat('%', #{name}, '%')
+	</select>
+	
+	<select id="getPageList" parameterType="StudentSearchCondition" resultType="Student">
+		select id,name,age,gender,address 
+		from student
+		limit ${(pageNo-1)*pageSize},#{pageSize}
 	</select>
 </mapper>
