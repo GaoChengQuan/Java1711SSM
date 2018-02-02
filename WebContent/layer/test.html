@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../lib/jquery/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="test.js" type="text/javascript" charset="utf-8"></script>
+		<script src="mylayer.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			//demo.test("Java1711");
+			layer.ready(function() {
+				//mylayer.success("删除成功");
+				//mylayer.success("删除成功", "http://www.baidu.com");
+				//mylayer.errorMsg("此用户不存在");
+				//mylayer.errorAlert("此用户不能删除！！！")
+				mylayer.confirm("您确定要删除么？", "http://www.baidu.com")
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

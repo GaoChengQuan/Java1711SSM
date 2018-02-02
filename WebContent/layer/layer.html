@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../lib/jquery/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			#test{
+				margin-top: 100px;
+				margin-left: 100px;
+			}			
+		</style>
+		<script>
+			layer.ready(function() {
+				/* layer.open({
+			  		type: 1,
+			  		content: $('#id') 
+			  		//这里content是一个DOM，
+			  		//注意：最好该元素要存放在body最外层，
+			  		//否则可能被其它的相对元素所影响
+				}); */
+				
+				/* layer.open({
+			  		type: 1,
+			  		content: '添加成功' 
+				}); */
+				
+				/* layer.open({
+				  type: 4,
+				  content: ['内容', '#test']//数组第二项即吸附元素选择器或者DOM
+				});  */
+				
+				/* var i = layer.open({
+				  content: '测试回调',
+				  success: function(layero, index){
+				    console.log(layero, index);
+				  }
+				});
+				console.log(i); */
+				
+				//layer.alert('酷毙了', {icon: 6});
+				
+				/*layer.open({
+					type : 1,
+					maxmin : true,
+					btnAlign : 'c',
+					area : ['400px', '200px'],
+					btn : ['按钮1', '按钮2', '按钮3'],
+					yes : function(index, layero) {
+						console.log("按钮一");
+						//手动关闭
+						layer.close(index);
+					},
+					btn2 : function(index, layero) {
+						console.log("按钮二");
+						return false; //开启该代码可禁止点击该按钮关闭
+					},
+					btn3 : function(index, layero) {
+						console.log("按钮三");
+					},
+					cancel : function(index, layero) {//右上角关闭按钮触发的回调
+						if(confirm('确定要关闭么')){ //只有当点击confirm框的确定时，该层才会关闭
+    						layer.close(index)
+  						}
+						return false;
+					},
+					end : function() {//无论是确认还是取消，只要层被销毁了，end都会执行，不携带任何参数
+						console.log("end 销毁");
+					},
+					full : function(layero) {//最大化
+						console.log("full");
+					},
+					min : function(layero) {//最小化
+						console.log("min");
+					},
+					restore : function(layero) {//还原
+						console.log("restore");
+					},
+				});*/
+				
+				/*layer.alert(
+					"只想简单的提示",
+					{icon : 1},
+					function(index) {
+						console.log(index);
+						layer.close(index);
+					}
+				);*/
+				
+				/*layer.confirm(
+						'is not?',
+						{icon: 3, title:'提示'}, 
+						function(index){
+					  		//do something
+					   		layer.close(index);
+						}
+				);*/
+				//layer.tips("提示信息", "#test", {tips:3});
+				/*layer.prompt(
+					{
+						formType : 0,
+						value: '初始值',
+  						title: '请输入值',
+  						content : '<div id="ttt" class="layui-layer-content">用户名：<input type="text" class="layui-layer-input" value="初始值">密码：<input type="password" class="layui-layer-input" value="初始值"></div>'
+					},
+					function(value, index, elem) {
+						console.log(value);
+						console.log(index);
+						console.log(elem[0].value);
+						console.log(elem[1].value);
+					}
+					
+				);*/
+			});
+		</script>	
+	</head>
+	<body>
+		<button id="test">这是测试程序</button>
+		
+	</body>
+	<div id="ttt" class="layui-layer-content">
+			用户名：<input type="text" class="layui-layer-input" value="初始值">
+			密码：<input type="password" class="layui-layer-input" value="初始值">
+	</div>
+</html>
+
